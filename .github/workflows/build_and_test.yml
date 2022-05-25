@@ -37,11 +37,12 @@ jobs:
           dotnet pack \
             libstemmer.net.csproj \
             -c Release \
-            --no-restore
+            -v
           nuget pack \
             libstemmer.net.nuspec \
             -OutputDirectory ${{ github.workspace }} \
-            -Version ${{ env.NUGET_PAKCAGE_VERSION }}
+            -Version ${{ env.NUGET_PAKCAGE_VERSION }} \
+            -Verbosity detailed
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
