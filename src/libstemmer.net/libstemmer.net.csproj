@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>libstemmer.net</PackageId>
+    <Authors>Guoyu Wang</Authors>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\arabicStemmer.generated.cs" Link="Algorithms\arabicStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\armenianStemmer.generated.cs" Link="Algorithms\armenianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\basqueStemmer.generated.cs" Link="Algorithms\basqueStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\catalanStemmer.generated.cs" Link="Algorithms\catalanStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\danishStemmer.generated.cs" Link="Algorithms\danishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\dutchStemmer.generated.cs" Link="Algorithms\dutchStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\englishStemmer.generated.cs" Link="Algorithms\englishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\finnishStemmer.generated.cs" Link="Algorithms\finnishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\frenchStemmer.generated.cs" Link="Algorithms\frenchStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\germanStemmer.generated.cs" Link="Algorithms\germanStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\greekStemmer.generated.cs" Link="Algorithms\greekStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\hindiStemmer.generated.cs" Link="Algorithms\hindiStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\hungarianStemmer.generated.cs" Link="Algorithms\hungarianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\indonesianStemmer.generated.cs" Link="Algorithms\indonesianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\irishStemmer.generated.cs" Link="Algorithms\irishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\italianStemmer.generated.cs" Link="Algorithms\italianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\lithuanianStemmer.generated.cs" Link="Algorithms\lithuanianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\nepaliStemmer.generated.cs" Link="Algorithms\nepaliStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\norwegianStemmer.generated.cs" Link="Algorithms\norwegianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\porterStemmer.generated.cs" Link="Algorithms\porterStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\portugueseStemmer.generated.cs" Link="Algorithms\portugueseStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\romanianStemmer.generated.cs" Link="Algorithms\romanianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\russianStemmer.generated.cs" Link="Algorithms\russianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\serbianStemmer.generated.cs" Link="Algorithms\serbianStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\spanishStemmer.generated.cs" Link="Algorithms\spanishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\swedishStemmer.generated.cs" Link="Algorithms\swedishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\tamilStemmer.generated.cs" Link="Algorithms\tamilStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\turkishStemmer.generated.cs" Link="Algorithms\turkishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\yiddishStemmer.generated.cs" Link="Algorithms\yiddishStemmer.generated.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Among.cs" Link="Among.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
+    <Compile Include="..\..\submodule\snowball\csharp\Snowball\Stemmer.cs" Link="Stemmer.cs" />
+  </ItemGroup>
+
+   <ItemGroup>
+      <Folder Include="Algorithms\" />
+   </ItemGroup>
+
+</Project>

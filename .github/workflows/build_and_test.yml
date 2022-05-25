@@ -16,18 +16,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: recursive
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: mcs
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: GetVersion
+        working-directory: ./submodule/snowball
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git fetch --tags
+          echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
+
+      - name: Build and test Snowball for csharp
+        working-directory: ./submodule/snowball
+        run: make check_csharp
+
+      - name: Build the nuget package
+        working-directory: ./src/libstemmer.net
+        run: |
+          dotnet build \
+            libstemmer.net.csproj \
+            -c Release
+          nuget pack \
+            libstemmer.net.nuspec \
+            -OutputDirectory ${{ github.workspace }} \
+            -Version ${{ env.NUGET_PAKCAGE_VERSION }}
+
+      - name: Upload nuget package
+        uses: actions/upload-artifact@v3
+        with:
+          name: nuget package
+          path: ${{ github.workspace }}/**/*.nupkg
