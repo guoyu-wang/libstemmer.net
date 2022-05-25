@@ -20,11 +20,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      
+
       - name: GetVersion
         working-directory: ./submodule/snowball
-        run: | 
-          git fetch --tags 
+        run: |
+          git fetch --tags
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
 
       - name: Build and test Snowball for csharp
@@ -36,9 +36,11 @@ jobs:
         run: |
           dotnet pack \
             libstemmer.net.csproj \
-            -c Release \
-            -p:PackageVersion=$NUGET_PAKCAGE_VERSION \
-            -o ${{ github.workspace }}
+            -c Release
+          nuget pack \
+            libstemmer.net.nuspec \
+            -OutputDirectory ${{ github.workspace }} \
+            -Version $NUGET_PAKCAGE_VERSION \
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
