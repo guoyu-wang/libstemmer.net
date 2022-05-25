@@ -27,6 +27,7 @@ jobs:
         run: | 
           git fetch --tags 
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
+          echo $NUGET_PAKCAGE_VERSION
 
       - name: Build Snowball for csharp
         working-directory: ./submodule/snowball
@@ -34,4 +35,14 @@ jobs:
 
       - name: Build the nuget package
         working-directory: ./src/libstemmer.net
-        run: dotnet pack libstemmer.net.csproj -c Release -p:PackageVersion=$NUGET_PAKCAGE_VERSION
+        run: |
+          dotnet pack \
+            libstemmer.net.csproj \
+            -c Release \
+            -p:PackageVersion=$NUGET_PAKCAGE_VERSION \
+            -o $GITHUB_WORKSPACE
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: nuget package
+          path: $GITHUB_WORKSPACE/*.nupkg
