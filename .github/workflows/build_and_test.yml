@@ -27,9 +27,9 @@ jobs:
         run: | 
           git fetch --tags 
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
-          echo $NUGET_PAKCAGE_VERSION
+          echo ""$NUGET_PAKCAGE_VERSION""
 
-      - name: Build Snowball for csharp
+      - name: Build and test Snowball for csharp
         working-directory: ./submodule/snowball
         run: make check_csharp
 
@@ -42,7 +42,8 @@ jobs:
             -p:PackageVersion=$NUGET_PAKCAGE_VERSION \
             -o $GITHUB_WORKSPACE
 
-      - uses: actions/upload-artifact@v3
+      - name: Upload nuget package
+        uses: actions/upload-artifact@v3
         with:
           name: nuget package
-          path: $GITHUB_WORKSPACE/*.nupkg
+          path: $GITHUB_WORKSPACE/**/*.nupkg
