@@ -1,0 +1,6 @@
+[submodule "submodule/snowball-data"]
+	path = submodule/snowball-data
+	url = https://github.com/snowballstem/snowball-data.git
+[submodule "submodule/snowball"]
+	path = submodule/snowball
+	url = https://github.com/snowballstem/snowball.git
