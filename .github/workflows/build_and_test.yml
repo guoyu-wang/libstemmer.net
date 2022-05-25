@@ -24,7 +24,9 @@ jobs:
       
       - name: GetVersion
         working-directory: ./submodule/snowball
-        run: echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
+        run: | 
+          git fetch --tags 
+          echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
 
       - name: Build Snowball for csharp
         working-directory: ./submodule/snowball
