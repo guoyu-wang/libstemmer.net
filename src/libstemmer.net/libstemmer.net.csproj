@@ -1,13 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>libstemmer.net</PackageId>
+    <Authors>Guoyu Wang</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Algorithms\.gitignore" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\..\submodule\snowball\csharp\Snowball\Algorithms\arabicStemmer.generated.cs" Link="Algorithms\arabicStemmer.generated.cs" />
@@ -44,8 +42,8 @@
     <Compile Include="..\..\submodule\snowball\csharp\Snowball\Stemmer.cs" Link="Stemmer.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Algorithms\" />
-  </ItemGroup>
+   <ItemGroup>
+      <Folder Include="Algorithms\" />
+   </ItemGroup>
 
 </Project>
