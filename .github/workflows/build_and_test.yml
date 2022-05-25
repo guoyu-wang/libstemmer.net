@@ -36,7 +36,8 @@ jobs:
         run: |
           dotnet pack \
             libstemmer.net.csproj \
-            -c Release
+            -c Release \
+            --no-restore
           nuget pack \
             libstemmer.net.nuspec \
             -OutputDirectory ${{ github.workspace }} \
