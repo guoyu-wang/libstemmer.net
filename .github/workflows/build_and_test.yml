@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -39,10 +38,10 @@ jobs:
             libstemmer.net.csproj \
             -c Release \
             -p:PackageVersion=$NUGET_PAKCAGE_VERSION \
-            -o "$GITHUB_WORKSPACE"
+            -o ${{ github.workspace }}
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
         with:
           name: nuget package
-          path: "$GITHUB_WORKSPACE/**/*.nupkg"
+          path: ${{ github.workspace }}/**/*.nupkg
