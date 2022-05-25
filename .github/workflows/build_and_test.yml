@@ -40,7 +40,7 @@ jobs:
           nuget pack \
             libstemmer.net.nuspec \
             -OutputDirectory ${{ github.workspace }} \
-            -Version $NUGET_PAKCAGE_VERSION \
+            -Version ${{ nuget.package.version }}
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
