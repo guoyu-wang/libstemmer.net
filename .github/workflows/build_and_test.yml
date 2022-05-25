@@ -34,15 +34,13 @@ jobs:
       - name: Build the nuget package
         working-directory: ./src/libstemmer.net
         run: |
-          dotnet pack \
+          dotnet build \
             libstemmer.net.csproj \
-            -c Release \
-            -v
+            -c Release
           nuget pack \
             libstemmer.net.nuspec \
             -OutputDirectory ${{ github.workspace }} \
-            -Version ${{ env.NUGET_PAKCAGE_VERSION }} \
-            -Verbosity detailed
+            -Version ${{ env.NUGET_PAKCAGE_VERSION }}
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
