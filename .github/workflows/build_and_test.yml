@@ -28,7 +28,6 @@ jobs:
         run: |
           git fetch --tags
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
-          echo ${{ github.base.ref }}
 
       - name: GetDevVersionNumer
         if: ${{ github.event_name != 'push' }}
@@ -36,7 +35,6 @@ jobs:
         run: |
           git fetch --tags
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)-dev-${{ github.sha }}" >> $GITHUB_ENV
-          echo ${{ github.base.ref }}
 
       - name: Build and test Snowball for csharp
         working-directory: ./submodule/snowball

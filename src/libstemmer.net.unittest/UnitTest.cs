@@ -8,8 +8,7 @@
       {
          string expectedName = language.Replace( "_", "" ) + "Stemmer";
 
-         return stemmerName.StartsWith( expectedName,
-             StringComparison.CurrentCultureIgnoreCase );
+         return stemmerName.StartsWith( expectedName, StringComparison.CurrentCultureIgnoreCase );
       }
 
       [SetUp]
