@@ -13,5 +13,6 @@
   </metadata>
   <files>
     <file src="bin\Release\netstandard2.0\libstemmer.net.dll" target="lib\netstandard2.0\" />
+    <file src="bin\Release\netstandard2.0\LICENSE-3RD-PARTY.txt" target="" />
   </files>
 </package>

@@ -42,8 +42,13 @@
     <Compile Include="..\..\submodule\snowball\csharp\Snowball\Stemmer.cs" Link="Stemmer.cs" />
   </ItemGroup>
 
-   <ItemGroup>
-      <Folder Include="Algorithms\" />
-   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\" />
+  </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\LICENSE-3RD-PARTY.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

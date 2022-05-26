@@ -1,7 +1,7 @@
 # libstemmer.net
 
 ## Introduction
-This repository builds the nuget package of [Snowball](https://snowballstem.org/) for .Net Standard 2.0. No source code from [Snowball](https://snowballstem.org/) is modified or distributed in the libstemmer.net nuget package.
+This repository builds, tests and publishes the nuget package of [Snowball](https://snowballstem.org/) for .Net Standard 2.0.
 
 For any questions or issues related to the Snowball Stemmer itself, please visit the [snowball github repository](https://github.com/snowballstem/snowball).
 
@@ -12,4 +12,5 @@ The nuget package is published at https://www.nuget.org/packages/libstemmer.net.
 
 ## License
 - libstemmer.net, [MIT license](LICENSE)
-- [Snowball](https://snowballstem.org/), [BSD-3-Clause license](https://github.com/snowballstem/snowball/blob/master/COPYING)
+- [snowball](https://github.com/snowballstem/snowball) [BSD-3-Clause license](https://github.com/snowballstem/snowball/blob/master/COPYING)
+- [snowball-data](https://github.com/snowballstem/snowball-data), [BSD-3-Clause license](https://github.com/snowballstem/snowball-data/blob/master/COPYING)
