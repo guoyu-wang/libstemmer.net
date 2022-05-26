@@ -1,4 +1,4 @@
-name: CI
+name: Nuget-Build-Test-Publish
 
 on:
   push:
@@ -45,6 +45,7 @@ jobs:
       - name: Test the nuget package
         working-directory: ./src/libstemmer.net.unittest
         run: |
+          dotnet restore
           mkdir package
           nuget add \
             "${{ github.workspace }}/libstemmer.net.${{ env.NUGET_PAKCAGE_VERSION }}.nupkg" \
