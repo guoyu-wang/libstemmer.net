@@ -7,6 +7,7 @@
     <description>Nuget package of Snowball Stem(snowballstem.org) for .Net Standard</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/guoyu-wang/libstemmer.net</projectUrl>
+    <readme>README.md</readme>
     <dependencies>
       <group targetFramework=".NETStandard2.0" />
     </dependencies>
@@ -14,5 +15,6 @@
   <files>
     <file src="bin\Release\netstandard2.0\libstemmer.net.dll" target="lib\netstandard2.0\" />
     <file src="bin\Release\netstandard2.0\LICENSE-3RD-PARTY.txt" target="" />
+    <file src="bin\Release\netstandard2.0\README.md" target="" />
   </files>
 </package>
