@@ -1,4 +1,7 @@
-﻿namespace libstemmer.net.unittest
+﻿// Copyright (c) Guoyu Wang. All rights reserved.
+// Licensed under the MIT License.
+
+namespace libstemmer.net.unittest
 {
    public class Tests
    {
