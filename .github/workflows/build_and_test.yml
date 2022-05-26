@@ -42,6 +42,19 @@ jobs:
             -OutputDirectory ${{ github.workspace }} \
             -Version ${{ env.NUGET_PAKCAGE_VERSION }}
 
+      - name: Test the nuget package
+        working-directory: ./src/libstemmer.net.unittest
+        run: |
+          mkdir package
+          nuget add \
+            "${{ github.workspace }}/libstemmer.net.${{ env.NUGET_PAKCAGE_VERSION }}.nupkg" \
+            -Source ./packages
+          dotnet add \
+            package libstemmer.net \
+            -s ./packages
+          dotnet test \
+            libstemmer.net.unittest.csproj
+
       - name: Upload nuget package
         uses: actions/upload-artifact@v3
         with:
