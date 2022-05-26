@@ -1,4 +1,4 @@
-namespace libstemmer.net.unittest
+﻿namespace libstemmer.net.unittest
 {
    public class Tests
    {
@@ -37,6 +37,18 @@ namespace libstemmer.net.unittest
             .Select( t => ( Stemmer? )Activator.CreateInstance( t ) ).FirstOrDefault();
 
          Assert.IsNotNull( stemmer );
+
+         // Base case, test null and empty input
+         var nullStem = stemmer.Stem( null );
+         Assert.That( nullStem, Is.EqualTo( string.Empty ) );
+
+         var emptyStem = stemmer.Stem( string.Empty );
+         Assert.That( emptyStem, Is.EqualTo( string.Empty ) );
+
+         // Feed some EA strings
+         var eaInput = "中文";
+         var eaStem = stemmer.Stem( eaInput );
+         Assert.That( eaStem, Is.EqualTo( eaInput ), $"{eaInput} and {eaStem} are not the same, input: {eaInput}" );
 
          using var inputReader = new StreamReader( inputFilePath );
          using var outputReader = new StreamReader( outputFilePath );
