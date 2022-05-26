@@ -1,4 +1,4 @@
-name: CI
+name: Nuget-Build-Test-Publish
 
 on:
   push:
@@ -13,6 +13,7 @@ on:
 
 jobs:
   build:
+    name: Build, test and upload nuget package
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +22,19 @@ jobs:
         with:
           submodules: recursive
 
-      - name: GetVersion
+      - name: GetVersionNumer
+        if: ${{ github.event_name == 'push' }}
         working-directory: ./submodule/snowball
         run: |
           git fetch --tags
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)" >> $GITHUB_ENV
+
+      - name: GetDevVersionNumer
+        if: ${{ github.event_name != 'push' }}
+        working-directory: ./submodule/snowball
+        run: |
+          git fetch --tags
+          echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)-dev-${{ github.sha }}" >> $GITHUB_ENV
 
       - name: Build and test Snowball for csharp
         working-directory: ./submodule/snowball
@@ -41,6 +50,20 @@ jobs:
             libstemmer.net.nuspec \
             -OutputDirectory ${{ github.workspace }} \
             -Version ${{ env.NUGET_PAKCAGE_VERSION }}
+
+      - name: Test the nuget package
+        working-directory: ./src/libstemmer.net.unittest
+        run: |
+          dotnet restore
+          mkdir package
+          nuget add \
+            "${{ github.workspace }}/libstemmer.net.${{ env.NUGET_PAKCAGE_VERSION }}.nupkg" \
+            -Source ./packages
+          dotnet add \
+            package libstemmer.net \
+            --prerelease \
+            -s ./packages
+          dotnet test
 
       - name: Upload nuget package
         uses: actions/upload-artifact@v3

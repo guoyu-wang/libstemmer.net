@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libstemmer.net", "libstemmer.net\libstemmer.net.csproj", "{EFDAD9C1-964B-4711-AF12-240A8171C74A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "libstemmer.net", "libstemmer.net\libstemmer.net.csproj", "{EFDAD9C1-964B-4711-AF12-240A8171C74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libstemmer.net.unittest", "libstemmer.net.unittest\libstemmer.net.unittest.csproj", "{86041044-A307-4B81-8BE8-C743A7B4464F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EFDAD9C1-964B-4711-AF12-240A8171C74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFDAD9C1-964B-4711-AF12-240A8171C74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFDAD9C1-964B-4711-AF12-240A8171C74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86041044-A307-4B81-8BE8-C743A7B4464F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86041044-A307-4B81-8BE8-C743A7B4464F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86041044-A307-4B81-8BE8-C743A7B4464F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86041044-A307-4B81-8BE8-C743A7B4464F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
