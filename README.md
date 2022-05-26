@@ -1,7 +1,7 @@
 # libstemmer.net
 
 ## Introduction
-This repository builds the nuget package of [Snowball](https://snowballstem.org/) for .Net Standard 2.0. No source code from [Snowball](https://snowballstem.org/) is modified or distributed in the libstemmer.net nuget package.
+This repository builds, tests and publishes the nuget package of [Snowball](https://snowballstem.org/) for .Net Standard 2.0.
 
 For any questions or issues related to the Snowball Stemmer itself, please visit the [snowball github repository](https://github.com/snowballstem/snowball).
 
