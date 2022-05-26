@@ -22,6 +22,10 @@ jobs:
         with:
           submodules: recursive
 
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: 'latest'
+
       - name: GetVersionNumer
         if: ${{ github.event_name == 'push' }}
         working-directory: ./submodule/snowball
