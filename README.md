@@ -12,4 +12,5 @@ The nuget package is published at https://www.nuget.org/packages/libstemmer.net.
 
 ## License
 - libstemmer.net, [MIT license](LICENSE)
-- [Snowball](https://snowballstem.org/), [BSD-3-Clause license](https://github.com/snowballstem/snowball/blob/master/COPYING)
+- [snowball](https://github.com/snowballstem/snowball) [BSD-3-Clause license](https://github.com/snowballstem/snowball/blob/master/COPYING)
+- [snowball-data](https://github.com/snowballstem/snowball-data), [BSD-3-Clause license](https://github.com/snowballstem/snowball-data/blob/master/COPYING)
