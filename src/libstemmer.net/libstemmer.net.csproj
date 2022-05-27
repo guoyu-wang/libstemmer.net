@@ -5,6 +5,8 @@
     <Authors>Guoyu Wang</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>libstemmer.net.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
