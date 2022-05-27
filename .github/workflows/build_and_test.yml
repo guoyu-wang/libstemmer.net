@@ -22,7 +22,8 @@ jobs:
         with:
           submodules: recursive
 
-      - uses: nuget/setup-nuget@v1
+      - name: Use latest nuget
+        uses: nuget/setup-nuget@v1
         with:
           nuget-version: 'latest'
 
@@ -39,6 +40,13 @@ jobs:
         run: |
           git fetch --tags
           echo "NUGET_PAKCAGE_VERSION=$(git describe --tags|cut -c2-)-dev-${{ github.sha }}" >> $GITHUB_ENV
+
+      - name: Save snk key file for assemblt signing
+        uses: timheuer/base64-to-file@v1.1
+        with:
+          fileName: libstemmer.net.snk
+          fileDir: ./src/libstemmer.net
+          encodedString: ${{ secrets.LIBSTEMMER_NET_SNK }}
 
       - name: Build and test Snowball for csharp
         working-directory: ./submodule/snowball
