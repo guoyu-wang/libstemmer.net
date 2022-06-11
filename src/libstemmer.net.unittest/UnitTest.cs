@@ -55,7 +55,7 @@ namespace libstemmer.net.unittest
          // Feed some Arabic strings
          var arabicInput = "عربى";
          var arabicStem = stemmer.Stem( arabicInput );
-         Assert.That( eaStem, Is.EqualTo( arabicInput ), $"{arabicInput} and {arabicStem} are not the same, input: {arabicInput}" );
+         Assert.That( arabicStem, Is.EqualTo( arabicInput ), $"{arabicInput} and {arabicStem} are not the same, input: {arabicInput}" );
 
          using var inputReader = new StreamReader( inputFilePath );
          using var outputReader = new StreamReader( outputFilePath );
@@ -103,6 +103,7 @@ namespace libstemmer.net.unittest
       [TestCase( "yiddish" )]
       public void TestSingleLanguage( string language )
       {
+         TestContext.Out.WriteLine( $"Testing Language: {language}" );
          TestSingleLanguageInternal( language, this.testFileRoot );
       }
    }
