@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
+    <title>LibStemmer.Net</title>
     <id>libstemmer.net</id>
     <version>1.0.0</version>
     <authors>Guoyu Wang</authors>
-    <description>Nuget package of Snowball Stem(snowballstem.org) for .Net Standard</description>
+    <description>Nuget package of Snowball Stemmer(snowballstem.org) for .Net Standard</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/guoyu-wang/libstemmer.net</projectUrl>
     <readme>README.md</readme>
+    <tags>stem stemmer snowball c# csharp .NETStandard nlp</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0" />
     </dependencies>
