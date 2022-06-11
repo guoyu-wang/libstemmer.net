@@ -26,7 +26,7 @@ namespace libstemmer.net.unittest
       }
 
 
-      private static void TestSingleLanguage( string language, string testFileRoot )
+      private static void TestSingleLanguageInternal( string language, string testFileRoot )
       {
          var inputFilePath = Path.Combine( testFileRoot, language, @"voc.txt" );
          var outputFilePath = Path.Combine( testFileRoot, language, @"output.txt" );
@@ -52,6 +52,11 @@ namespace libstemmer.net.unittest
          var eaStem = stemmer.Stem( eaInput );
          Assert.That( eaStem, Is.EqualTo( eaInput ), $"{eaInput} and {eaStem} are not the same, input: {eaInput}" );
 
+         // Feed some Arabic strings
+         var arabicInput = "عربى";
+         var arabicStem = stemmer.Stem( arabicInput );
+         Assert.That( arabicStem, Is.EqualTo( arabicInput ), $"{arabicInput} and {arabicStem} are not the same, input: {arabicInput}" );
+
          using var inputReader = new StreamReader( inputFilePath );
          using var outputReader = new StreamReader( outputFilePath );
          string? input = inputReader.ReadLine();
@@ -67,179 +72,39 @@ namespace libstemmer.net.unittest
          } while( input != null && output != null );
       }
 
-      [Test]
-      public void TestEnglish()
+      [TestCase( "english" )]
+      // [TestCase( "arabic" )] // TODO, unarchive the gz test files for arabic
+      [TestCase( "armenian" )]
+      [TestCase( "basque" )]
+      [TestCase( "catalan" )]
+      [TestCase( "danish" )]
+      [TestCase( "dutch" )]
+      [TestCase( "finnish" )]
+      [TestCase( "french" )]
+      [TestCase( "german" )]
+      [TestCase( "greek" )]
+      [TestCase( "hindi" )]
+      [TestCase( "hungarian" )]
+      [TestCase( "indonesian" )]
+      [TestCase( "irish" )]
+      [TestCase( "italian" )]
+      [TestCase( "lithuanian" )]
+      [TestCase( "nepali" )]
+      [TestCase( "norwegian" )]
+      [TestCase( "porter" )]
+      [TestCase( "portuguese" )]
+      [TestCase( "romanian" )]
+      [TestCase( "russian" )]
+      [TestCase( "serbian" )]
+      [TestCase( "spanish" )]
+      [TestCase( "swedish" )]
+      [TestCase( "tamil" )]
+      [TestCase( "turkish" )]
+      [TestCase( "yiddish" )]
+      public void TestSingleLanguage( string language )
       {
-         TestSingleLanguage( "english", this.testFileRoot );
-      }
-
-      // TODO, unarchive the gz test files
-      //[Test]
-      //public void TestArabic()
-      //{
-      //   TestSingleLanguage( "arabic", this.testFileRoot );
-      //}
-
-      [Test]
-      public void TestArmenian()
-      {
-         TestSingleLanguage( "armenian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestBasque()
-      {
-         TestSingleLanguage( "basque", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestCatalan()
-      {
-         TestSingleLanguage( "catalan", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestDanish()
-      {
-         TestSingleLanguage( "danish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestDutch()
-      {
-         TestSingleLanguage( "dutch", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestFinnish()
-      {
-         TestSingleLanguage( "finnish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestFrench()
-      {
-         TestSingleLanguage( "french", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestGerman()
-      {
-         TestSingleLanguage( "german", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestGreek()
-      {
-         TestSingleLanguage( "greek", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestHindi()
-      {
-         TestSingleLanguage( "hindi", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestHungarian()
-      {
-         TestSingleLanguage( "hungarian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestIndonesian()
-      {
-         TestSingleLanguage( "indonesian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestIrish()
-      {
-         TestSingleLanguage( "irish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestItalian()
-      {
-         TestSingleLanguage( "italian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestLithuanian()
-      {
-         TestSingleLanguage( "lithuanian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestNepali()
-      {
-         TestSingleLanguage( "nepali", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestNorwegian()
-      {
-         TestSingleLanguage( "norwegian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestPorter()
-      {
-         TestSingleLanguage( "porter", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestPortuguese()
-      {
-         TestSingleLanguage( "portuguese", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestRomanian()
-      {
-         TestSingleLanguage( "romanian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestRussian()
-      {
-         TestSingleLanguage( "russian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestSerbian()
-      {
-         TestSingleLanguage( "serbian", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestSpanish()
-      {
-         TestSingleLanguage( "spanish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestSwedish()
-      {
-         TestSingleLanguage( "swedish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestTamil()
-      {
-         TestSingleLanguage( "tamil", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestTurkish()
-      {
-         TestSingleLanguage( "turkish", this.testFileRoot );
-      }
-
-      [Test]
-      public void TestYiddish()
-      {
-         TestSingleLanguage( "yiddish", this.testFileRoot );
+         TestContext.Out.WriteLine( $"Testing Language: {language}" );
+         TestSingleLanguageInternal( language, this.testFileRoot );
       }
    }
 }
