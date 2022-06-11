@@ -7,7 +7,7 @@ For any questions or issues related to the Snowball Stemmer itself, please visit
 
 The nuget package is published at https://www.nuget.org/packages/libstemmer.net.
 
-The [Unit Tests](src/libstemmer.net.unittest) of the libstemmer.net nuget package is using the test data from [Snowball Data](https://github.com/snowballstem/snowball-data).
+The [Unit Tests](src/libstemmer.net.unittest) of the libstemmer.net nuget package is using the test data from [snowball-data](https://github.com/snowballstem/snowball-data).
 
 ## Pipeline Status
 [![Nuget-Build-Test-Publish](https://github.com/guoyu-wang/libstemmer.net/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/guoyu-wang/libstemmer.net/actions/workflows/build_and_test.yml)
